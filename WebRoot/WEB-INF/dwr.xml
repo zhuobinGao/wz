@@ -1,0 +1,60 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://getahead.org/dwr/dwr30.dtd">
+
+<dwr>
+  <allow>
+  
+  	<convert converter="bean" match="com.cangku.bean.IReceiveBean"/>
+  	<convert converter="bean" match="com.cangku.bean.SelRecAndReq"/>
+  	<convert converter="bean" match="com.cangku.bean.IRequestBean"/>
+  	<convert converter="bean" match="com.cangku.bean.MaterialBean"/>
+  	<convert converter="bean" match="com.cangku.bean.ImageBean"/>
+  	<convert converter="bean" match="com.cangku.bean.StoreBean"/>
+  	
+  	<convert converter="bean" match="com.gzb.prestatement.bean.SqlParams"/>
+  	
+  	
+  	
+  	<create creator="new" javascript="JieSuan">
+      <param name="class" value="com.cangku.controler.JieSuanControler"/>
+    </create>
+  	
+  	<create creator="new" javascript="UserAndPermission">
+      <param name="class" value="com.cangku.controler.UserAndPermissionControler"/>
+    </create>
+  	
+  	<create creator="new" javascript="Baseset">
+      <param name="class" value="com.cangku.controler.BasesetControler"/>
+    </create>
+    
+  	<create creator="new" javascript="ImageUtil">
+      <param name="class" value="com.cangku.controler.ImageControler"/>
+    </create>
+  	
+    <create creator="new" javascript="InAndOutCheck">
+      <param name="class" value="com.cangku.controler.InAndOutCheckControler"/>
+    </create>
+    
+    <create creator="new" javascript="Common">
+      <param name="class" value="com.cangku.controler.CommonControler"/>
+    </create>
+   
+    <create creator="new" javascript="PreStatement">
+      <param name="class" value="com.gzb.prestatement.MyPreStatement"/>
+    </create>
+    
+    <create creator="new" javascript="SendAndReceive">
+      <param name="class" value="com.gzb.sendAndReceive.SendAndReceive"/>
+    </create>
+    
+    <create creator="new" javascript="EncrypDES">
+      <param name="class" value="com.gzb.util.EncrypDES"/>
+    </create>
+    
+    <create creator="new" javascript="Report">
+      <param name="class" value="com.cangku.controler.ReportControler"/>
+    </create>
+    
+  </allow>
+</dwr>

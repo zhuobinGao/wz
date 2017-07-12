@@ -1,0 +1,248 @@
+<!DOCTYPE>
+<html >
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+
+
+<title>库存预警设计</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/jquery-ui.min.css">
+<link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../css/buttons.dataTables.min.css">
+
+
+
+<!--[if lt IE 9]>
+<script src="js/html5.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<style>
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 200px;
+  }
+  
+  div.dataTables_wrapper {
+      /*  width: 800px;*/
+        margin: 0 auto;
+  }
+
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="container-fluid" style="padding:10px;">
+
+    <ol class="breadcrumb">
+      <li><a href="#">仓库云</a></li>
+      <li><a href="#">仓存管理</a></li>
+      <li class="active">库存预警设计</li>
+    </ol>
+    
+    
+    <hr/>
+    
+    <div class="row" >
+	<div class="col-lg-12">
+         <div class="form-group form-group-sm form-inline">
+             <button type="button" class="btn btn-primary" >保持配置</button>
+             <button type="button" class="btn btn-primary" >重置</button> 
+         </div>
+     </div>
+	</div>
+    
+    
+    <div class="row">
+    	
+        <div class="col-md-5">
+        	<div class="panel panel-primary">
+                  <div class="panel-heading">库存预警设计</div>
+                  <div class="panel-body">
+                   		<form>
+                        	 <div class="form-group form-group-sm form-inline">
+                                <div class="row">
+                                     <div class="col-md-6">
+                                        <label  class="control-label">物资名称:</label>
+                                        <input type="text" class="form-control" id="f_vessel" placeholder="物资名称" size="25" >
+                                    </div>
+                                    
+                                    
+                                     <div class="col-md-6">
+                                        <label  class="control-label">物资类别:</label>
+                                        <input type="text" class="form-control" id="f_vessel" placeholder="物资类别" size="25" disabled >
+                                    </div>
+                                
+                                </div>
+                             </div>
+                             
+                              <div class="form-group form-group-sm form-inline">
+                                <div class="row">
+                                     <div class="col-md-6">
+                                        <label  class="control-label">物资规格:</label>
+                                        <input type="text" class="form-control" id="" placeholder="物资规格" size="25" >
+                                    </div>
+                                    
+                                    
+                                     <div class="col-md-6">
+                                        <label  class="control-label">计量单位:</label>
+                                        <input type="text" class="form-control" id="" placeholder="计量单位" size="25" disabled>
+                                    </div>
+                                
+                                </div>
+                             </div>
+                             
+                             <div class="form-group form-group-sm form-inline">
+                                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">&nbsp;&nbsp;是否开启库存预警</label>
+                             </div>
+                             
+                             
+                              <div class="form-group form-group-sm form-inline">
+                                <div class="row">
+                                     <div class="col-md-6">
+                                        <label  class="control-label">最低库存:</label>
+                                        <input type="text" class="form-control" id="" placeholder="最低库存" size="25" value="0" disabled>
+                                    </div>
+                                    
+                                    
+                                     <div class="col-md-6">
+                                        <label  class="control-label">最高库存:</label>
+                                        <input type="text" class="form-control" id="" placeholder="最高库存" size="25" value="9999" disabled>
+                                    </div>
+                                
+                                </div>
+                             </div>
+                             
+                              <div class="form-group form-group-sm form-inline">
+                                <div class="row">
+                                     <div class="col-md-6">
+                                        <label  class="control-label">当前库存:</label>
+                                        <input type="text" class="form-control" id="" placeholder="当前库存" size="25"  disabled>
+                                    </div>
+                                
+                                </div>
+                             </div>
+                        
+                        </form>
+                        
+                   
+                  </div>
+            </div>
+            
+        </div>
+        
+        <div class="col-md-4">
+        	<div class="panel panel-primary">
+                  <div class="panel-heading">消息框</div>
+                  <div class="panel-body">
+                  		<ul style="text-decoration:none; list-style:none;">
+                            <li>已设计库存预警</li>
+                            <li>已设计库存预警</li>
+                        </ul>
+                  
+                  
+                  </div>
+           </div>
+        
+        	
+        
+        </div>
+    
+    
+    </div>
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+</div>
+
+
+	
+
+
+
+
+
+
+
+
+</body>
+<script src="../../js/jquery-1.12.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+<script src="../../js/jquery.dataTables.min.js"></script>
+
+<script src="../../js/jquery-migrate-1.1.0.min.js"></script>
+<script src="../../js/jquery.jqprint-0.3.js"></script>
+
+<script src="../../js/exportJS/dataTables.buttons.min.js"></script>
+<script src="../../js/exportJS/buttons.flash.min.js"></script>
+<script src="../../js/exportJS/jszip.min.js"></script>
+<script src="../../js/exportJS/pdfmake.min.js"></script>
+<script src="../../js/exportJS/vfs_fonts.js"></script>
+<script src="../../js/exportJS/buttons.html5.min.js"></script>
+<script src="../../js/exportJS/buttons.print.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+	
+ $('.tableExample').DataTable({
+		 "language": {
+            "lengthMenu": "每页 _MENU_ /条",
+            "zeroRecords": "没有找到任何记录，对不起",
+            "info": "显示 _PAGE_ / _PAGES_ 页",
+            "infoEmpty": "没有任何可用记录",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search":         "检索:",
+            "paginate": {
+                "first":      "第一页",
+                "last":       "最后一页",
+                "next":      "下一页",
+                "previous":   "上一页"
+            }
+        },
+        "pagingType": "full_numbers",
+        "scrollX": true,
+        "lengthMenu": [[10, 20, 100, -1], [10, 20, 100, "All"]],
+        "order": [[ 0, "desc" ]],
+        dom: 'Bfrtip',
+        buttons: [
+             'csv', 'excel', 'pdf', 'print'
+        ]
+		
+    });
+
+
+
+		
+</script>
+
+</html>

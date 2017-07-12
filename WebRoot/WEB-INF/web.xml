@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name></display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  
+  <servlet>
+    <display-name>DWR Servlet</display-name>
+    <servlet-name>dwr-invoker</servlet-name>
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </servlet>
+  
+  <filter>  
+    <filter-name>UserFilter</filter-name>  
+    <filter-class>com.cangku.servlet.UserFilter</filter-class> 
+  </filter>
+  
+ 
+  
+  
+   <servlet>  
+        <servlet-name>Log4JInitServlet</servlet-name>  
+        <servlet-class>com.cangku.log.Log4JInitServlet</servlet-class>  
+        <init-param>  
+            <param-name>log4j-properties-location</param-name>  
+            <param-value>/WEB-INF/classes/log4j.properties</param-value>  
+        </init-param>  
+        <load-on-startup>1</load-on-startup>  
+    </servlet>
+    
+  <servlet>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>com.gzb.util.ImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.cangku.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjaxServlet</servlet-name>
+    <servlet-class>com.cangku.servlet.AjaxServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DataRequestServlet</servlet-name>
+    <servlet-class>com.gzb.api.servlet.DataRequestServlet</servlet-class>
+  </servlet>
+
+
+
+  
+  
+  
+  
+  
+  <servlet-mapping>
+    <servlet-name>dwr-invoker</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/page/Image</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxServlet</servlet-name>
+    <url-pattern>/servlet/AjaxServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DataRequestServlet</servlet-name>
+    <url-pattern>/servlet/DataRequestServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  <filter-mapping>  
+    <filter-name>UserFilter</filter-name>  
+    <url-pattern>/page/page/*</url-pattern>  
+  </filter-mapping> 
+  
+  
+  <error-page>
+       <error-code>404</error-code>
+       <location>/page/404.html</location>
+  </error-page>
+  
+</web-app>

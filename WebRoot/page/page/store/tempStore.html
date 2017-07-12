@@ -1,0 +1,307 @@
+<!DOCTYPE>
+<html >
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+
+
+<title>代保管仓储</title>
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../css/jquery-ui.min.css">
+<link rel="stylesheet" href="../../css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../css/buttons.dataTables.min.css">
+
+
+
+<!--[if lt IE 9]>
+<script src="js/html5.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<style>
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 200px;
+  }
+  
+  div.dataTables_wrapper {
+      /*  width: 800px;*/
+        margin: 0 auto;
+  }
+
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="container-fluid" style="padding:10px;">
+
+    <ol class="breadcrumb">
+      <li><a href="#">仓库云</a></li>
+      <li><a href="#">仓存管理</a></li>
+      <li class="active">代保管仓储</li>
+    </ol>
+    
+    
+    <hr/>
+    
+    <div class="panel panel-primary">
+      <div class="panel-body" >
+        
+        <div class="row" >
+            <form style=" margin-left:15px; margin-bottom:0;">
+                <div class="form-group form-group-sm form-inline" style="margin-bottom:0">
+                    
+                    
+                    <div class="row" >
+                        <div class="col-md-2">
+                            <label  class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;领料人:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="采购人" size="25" >
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label  class="control-label">领料单位:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="收料人" size="25" >
+                        </div>
+                        
+                         <div class="col-md-2">
+                            <label  class="control-label">仓库位置:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="仓库位置" size="25" >
+                        </div>
+                        
+                         <div class="col-md-2">
+                            <label  class="control-label">费用项目:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="费用项目" size="25" >
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-md-2">
+                            <label  class="control-label">物资名称:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="物资名称" size="25" >
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label  class="control-label">物资类别:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="物资类别" size="25" >
+                        </div>
+                        
+                         <div class="col-md-2">
+                            <label  class="control-label">详细用途:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="发票编号" size="25" >
+                        </div>
+                        
+                         <div class="col-md-2">
+                            <label  class="control-label">仓库位置:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="仓库位置" size="25" >
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <div class="row" style="margin-top:10px;">
+                         <div class="col-md-4">
+                            <label  class="control-label">供应单位:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="供应单位" size="60" >
+                         </div>
+                         
+                         <div class="col-md-4">
+                            <label  class="control-label">领料日期:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="开始时间" size="25" >
+                            <label  class="control-label">至:</label>
+                            <input type="text" class="form-control" id="f_vessel" placeholder="结束时间" size="25" >
+                         </div>
+                         
+                         <div class="col-md-2">
+                             <button type="button" class="btn btn-primary" >查  询</button>
+                             <button type="button" class="btn btn-primary" >打  印</button>
+                         </div>
+                    </div>
+                    
+               </div>
+            </form>
+        </div>
+    
+      </div>
+    </div>
+
+
+	<div class="row" >
+    	<div class="col-md-12">
+        	<div class="panel panel-primary">
+            
+                  <div class="panel-heading">
+                  代保管仓储
+                   <button type="button" class="btn btn-success" >提 取</button>
+                  </div>
+                  
+                  <div class="panel-body">
+        
+        
+                            <table id="example" class="display tableExample" cellspacing="0" width="100%">
+                                <thead>
+                                        <tr>
+                                            <th>领料编号</th>
+                                            <th>物资编号</th>
+                                            <th>物资名称</th>
+                                            <th>物资规格</th>
+                                            <th>计量单位</th>
+                                            <th>请领</th>
+                                            <th>实发</th>
+                                            <th>计划单位成本</th>
+                                            <th>金额</th>
+                                            <th>填单日期</th>
+                                            <th>领料日期</th>
+                                           
+                                            <th>发料人</th>
+                                            <th>领料人</th>
+                                            <th>领料单位</th>
+                                            <th>领料单位主管</th>
+                                            <th>费用项目</th>
+                                            <th>详细用途</th>
+                                            <th>附注</th>
+                                            
+                                        </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    
+                                </tbody>
+                
+                        </table>
+                   </div>
+              </div>     
+                        
+                        
+        
+        </div>
+    </div>
+	
+    <!--end one row -->
+    
+    <div class="row">
+    	<div class="col-md-12">
+        	<div class="panel panel-primary">
+            
+                  <div class="panel-heading">
+                  提取记录
+                   <button type="button" class="btn btn-success" >撤销提取</button>
+                  </div>
+                  
+                  <div class="panel-body">
+        
+        
+                            <table id="example2" class="display tableExample" cellspacing="0" width="100%">
+                                <thead>
+                                        <tr>
+                                            <th>领料编号</th>
+                                            <th>提取数量</th>
+                                            <th>提取人</th>
+                                            <th>提取时间</th>
+                                            <th>备注</th>
+                                        </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    
+                                </tbody>
+                
+                        </table>
+                   </div>
+              </div>     
+        
+        
+        </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+	
+
+
+
+
+
+
+
+
+</body>
+<script src="../../js/jquery-1.12.0.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+<script src="../../js/jquery.dataTables.min.js"></script>
+
+<script src="../../js/jquery-migrate-1.1.0.min.js"></script>
+<script src="../../js/jquery.jqprint-0.3.js"></script>
+
+<script src="../../js/exportJS/dataTables.buttons.min.js"></script>
+<script src="../../js/exportJS/buttons.flash.min.js"></script>
+<script src="../../js/exportJS/jszip.min.js"></script>
+<script src="../../js/exportJS/pdfmake.min.js"></script>
+<script src="../../js/exportJS/vfs_fonts.js"></script>
+<script src="../../js/exportJS/buttons.html5.min.js"></script>
+<script src="../../js/exportJS/buttons.print.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+	
+ $('.tableExample').DataTable({
+		 "language": {
+            "lengthMenu": "每页 _MENU_ /条",
+            "zeroRecords": "没有找到任何记录，对不起",
+            "info": "显示 _PAGE_ / _PAGES_ 页",
+            "infoEmpty": "没有任何可用记录",
+            "infoFiltered": "(filtered from _MAX_ total records)",
+            "search":         "检索:",
+            "paginate": {
+                "first":      "第一页",
+                "last":       "最后一页",
+                "next":      "下一页",
+                "previous":   "上一页"
+            }
+        },
+        "pagingType": "full_numbers",
+        "scrollX": true,
+        "lengthMenu": [[10, 20, 100, -1], [10, 20, 100, "All"]],
+        "order": [[ 0, "desc" ]],
+        dom: 'Bfrtip',
+        buttons: [
+             'csv', 'excel', 'pdf', 'print'
+        ]
+		
+    });
+
+
+
+		
+</script>
+
+</html>

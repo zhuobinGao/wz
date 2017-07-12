@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sitemap.xsl" type="text/xsl" media="all"?>
+<site>
+<page file="index.html" text="Material Admin" title="Material Admin">
+<page file="default.html" text="" title="Material Admin"/>
+</page>
+</site>

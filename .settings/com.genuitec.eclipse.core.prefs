@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+validator.Checked=WebRoot/page/page,WebRoot/js,WebRoot/login/js,WebRoot/page/js
+validator.Unchecked=
